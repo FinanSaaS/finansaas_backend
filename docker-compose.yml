@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+
+  api:
+    build: ./finsaas_app/
+    volumes:
+      - ./finsaas_app:/app
+    depends_on:
+      - db
+    environment:
+      DEBUG: 1
+      DATABASE_URL: postgres://user:password@db:5432/mydatabase
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./griot_backend/static:/app/static
+      - ./griot_backend/media:/app/media
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:

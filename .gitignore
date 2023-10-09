@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+db.sqlite3
+*.log
+
+# IDE directories
+*.idea/
+*.vscode/
+*.DS_Store
