@@ -1,0 +1,27 @@
+1) Allow token holder to create a LegalEntity
+- Flutter Layer (UI, Logic, tests)
+- Server Layer (API, Serializer, View, Model & tests)
+- Replicate the LegalEntity to BillingProvider of choice (Iugu)
+
+2) Allow token holder to create a stand alone sales_invoice
+- Flutter Layer (UI, Logic, tests)
+- Server Layer (API, Serializer, View, Model & tests)
+- Replicate the sales_invoice to BillingProvider of choice (Iugu)
+
+3) Allow token holder to create a RecurrencyPlan
+- Flutter Layer (UI, Logic, tests)
+- Server Layer (API, Serializer, View, Model & tests)
+- Implement command / celery to generate new invoices every day
+
+4) Allow user to retrieve a invoice status
+- Flutter Layer (UI, Logic, tests)
+- Server Layer (API, Serializer, View, Model & tests)
+- Implement command / celery to update invoices "every day" (check for hooks and call backs)
+
+5) Allow user to retrieve over_due invoice list
+- Flutter Layer (UI, Logic, tests)
+- Server Layer (API, Serializer, View, Model & tests)
+
+6) Allow user to SignUp, LogIn and LogOut
+- Flutter Layer (UI, Logic, tests)
+- Server Layer (API, Serializer, View, Model & tests)
